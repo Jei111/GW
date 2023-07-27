@@ -1,0 +1,206 @@
+@import url(../css/colores.css);
+
+/* HEADER */
+
+.title-txt{
+    position: absolute;
+    left: 25%;
+    top: 5px;
+}
+
+.subtitle{
+    margin-top: 10%;
+}
+
+/* LOGIN FORM */
+
+/* .alert-primary{
+    margin-top: 2%;
+}
+
+.login-incorrect, 
+.login-ghost {
+    display: none;
+}
+
+/* sustituido en style cssa */
+/* .all-login-form {
+    margin: 5% auto;
+} */
+
+/* .forget{
+    text-align: center;
+    margin-top: 10px;
+}
+
+#login-form{
+    display: block; */
+    /* display: none; */
+/*} */
+
+.forget > p {
+    color: var(--white-color);
+}
+
+/* FILTER AND ADD SECTION */
+
+.filter-and-add-section {
+    margin: 5% auto;
+    padding: 0 5%;
+    position: relative;
+    display: inline-flex;
+}
+
+.filter{
+    margin: 10px;
+}
+
+#productos-filter-add{
+    display: inline-flex
+}
+
+/* GESTION ALL */
+/* .gestion-all{
+    display: block;
+} */
+
+/* GESTION TABS CONTENT */
+
+#gestion-tabs, 
+#gestion-productos, 
+#gestion-usuarios, 
+#gestion-mensajes, 
+#gestion-ventas{
+    display: none;
+}
+
+.prod-grid-container {
+    /* display: grid;
+    grid-template-columns: auto 15%; */
+    display: block;
+  }
+  
+
+.table-buttons {
+    position: fixed;
+}
+
+/* la lista que contiene las tabs*/
+.gestion-tabs {
+    margin: 2% auto;
+}
+
+.gestion-tabs li {
+    margin: 0 auto;
+}
+
+
+/* la tabla de cada tab */
+.table {
+    width: 90%;
+    margin: 0 1%;
+    display: block;
+    width: 90%;
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+
+/* .table::-webkit-scrollbar {
+} */
+
+.fixed-col {
+    position: absolute;
+    display: block;
+    right: 2%;
+    overflow: hidden;
+    padding: 0 50px;
+  }
+
+/* edit button en tabla */
+.fixed-col2, 
+.fixed-col3 {
+    position: absolute;
+    overflow: hidden;
+    padding: 0 50px;
+}
+
+.fixed-col2{
+    /* right: 5%; */
+}
+
+/* delete button en tabla */
+.fixed-col3{
+    right: 0%;
+}
+
+.table-img {
+    height: 70px;
+}
+
+.td-short {
+    height:  20px;
+    max-width: 400px;
+}
+
+.td-long {
+    height: 100%;
+    max-width: 800px;
+}
+
+/* --- */
+
+.gestion-titles{
+    display: inline-flex;
+    border-bottom: solid 1px var(--black-color);
+    position: sticky;
+}
+
+.gestion-titles li {
+    margin: 2%;
+    color: var(--green-color);
+    font-weight: 800;
+}
+
+.gestion-titles li::selection{
+    background-color: var(--gray90-color);
+}
+  
+  tr, th, td {
+    padding: 10px;
+  }
+  
+  /* --- */
+  
+  .clickeable{
+    background-color: var(--white-color);
+    border: 3px solid var(--skyblue-btn-color);
+    color: var(--skyblue-btn-color);
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px;
+
+    display: block;
+    overflow: hidden;
+
+    /* quitando el display block y colocando lo de abajo queda fijo y pero al correr de los renglones no qued bien */
+    /* position: absolute;
+    margin-top: -25px; */
+  }
+  
+  .clickeable:hover{
+    background-color: var(--skyblue-btn-color);
+    border: 3px solid var(--skyblue-btn-color);
+    color: var(--white-color);
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  .collapsable {
+    display: none;
+  }
+
+/* FOOTER */
+.waves-background {
+    background-color: transparent;
+}

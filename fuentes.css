@@ -1,0 +1,126 @@
+/* ====================== FUENTES ====================== */
+
+/* 800 HACHES / 100 PES / 400 BOLD */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;800&display=swap');
+/* font-family: 'Raleway', sans-serif; */
+
+/* ---------------------- HACHES ---------------------- */
+  
+h1, h2, h3, h4 {
+    color: #1f1f1f;
+    text-shadow: 2px 2px #ffffff;
+    font-size: 3rem;
+    font-weight: 800;
+    font-family: 'Raleway', sans-serif;
+  }
+
+h5, h6 {  /* es igual pero más chiquito */
+  color: #1f1f1f;
+  text-shadow: 2px 2px #ffffff;
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: 'Raleway', sans-serif;
+}
+
+.title-back-color{
+  font-size: 3rem;
+  font-weight: 800;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  text-shadow: 2px 2px #000;
+}
+
+/* ---------------------- PES ---------------------- */
+
+.text-block {
+  background: #fff;
+  border: solid 2px #000;
+  border-radius: 20px;
+  padding: 4rem;
+  width: fit-content;
+  margin: 1rem auto;
+  box-shadow: 2px 4px 8px #00000065;
+}
+
+p, li, td, blockquote {
+  color: #1f1f1f;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.special {
+  color: #1f1f1f;
+  font-size: 1.2rem;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  text-shadow: 2px 2px 2px #64626246;
+}
+
+th, button {
+  color: #1f1f1f;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  text-shadow: 2px 2px 2px #63636346;
+}
+
+.small {
+  font-family: 'Raleway', sans-serif;
+  color: #1f1f1f; 
+  font-weight: 400; 
+  font-size: 0.7rem;
+  line-height: 1.8em;
+}
+
+.longText{
+  font-family: 'Raleway', sans-serif;
+  max-width: 600px;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+blockquote {
+  font-style: italic;
+}
+
+/* ---------------------- LIS ---------------------- */
+
+li{
+  list-style: none;
+}
+
+/* ---------------------- AS ---------------------- */
+
+a{
+  font-size: 1.2rem;
+}
+
+.small-a{
+  font-size: 0.7rem;
+}
+
+a, 
+.small-a{
+  color: #2eaaff;
+  line-height: 1.8rem;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+a:visited, 
+.small-a:visited {
+  text-decoration: none;
+  color: #0c1c53;
+}
+
+a:hover, 
+.small-a:hover {
+  text-decoration: none;
+  color:#d93b95;
+}

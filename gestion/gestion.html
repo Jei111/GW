@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grownline</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <!-- Icons: 1 Bootstrap - 2 Fontawesome-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script src="https://kit.fontawesome.com/a9f99944df.js" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/fuentes.css" type="text/css"> 
+    <link rel="stylesheet" href="../css/style.css" type="text/css"> 
+    <link rel="stylesheet" href="gestion.css" type="text/css">
+</head>
+<body>
+
+    <!-- ------------------- NavBar ------------------- -->
+
+    <!-- hamburguer menu icons -->
+    <div id="responsive-nav" class="responsive-nav">
+        <div onclick="openMenu()" id="hamburguer-menu-icon" class="hamburguer-menu-icon"><i class="bi bi-list"></i></div>
+        <div onclick="closeMenu()" id="x-menu-icon" class="x-menu-icon"><i class="bi bi-x-lg"></i></div>
+    </div>
+
+    <!-- responsive navbar menu -->
+    <div id="responsive-menu" class="responsive-menu">
+        <a href="../index.html"><li class="navbar-logo"><img src="../img/grownline-logo-white-03.svg" alt=""></li></a> 
+        <div><a class="vr-nav-link" href="../index.html#about">Sobre Nosotros</a></div>
+        <div>
+            <a class="vr-nav-link dropdown-toggle" href="../index.html#productos" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Productos
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item vr-nav-link" href="">Categoria1</a></li> 
+            <li><a class="dropdown-item vr-nav-link" href="">Categoria2</a></li> 
+            <li><a class="dropdown-item vr-nav-link" href="">Categoria3</a></li> 
+            </ul>
+        </div>
+        <div><a class="vr-nav-link" href="../index.html#contacto">Contacto</a></div>
+        <div><a class="vr-nav-link" href="../index.html#faq">FAQ</a></div>
+        <!-- acá estaría gestión DARIO arreglar esto con el tema del login -->
+        <li><a class="vr-nav-link" href="../consumar compra - cliente/finalizar-compra.html"><i class="bi bi-cart-fill"></i></a></li>
+    </div>
+    <div id="responsive-menu-cover" class="responsive-menu-cover"></div> <!-- responsive-menu-cover sirve para cuando click en menu => fondo negro para no ver la página y solo ver el menu -->
+
+    <!-- nav bar para desktop -->
+    <nav class="vr-navbar">
+
+        <!-- menu list -->
+        <ul id="navbar-list">
+            <a href="../index.html"><li class="navbar-logo"><img src="../img/grownline-logo-white-03.svg" alt=""></li></a> 
+
+            <li><a class="active vr-nav-link" href="../index.html#about">Sobre Nosotros</a></li>
+
+            <li class="dropdown vr-nav-item">
+                <a class="vr-nav-link dropdown-toggle" href="../index.html#productos" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Productos
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item vr-nav-link" href="">Categoria1</a></li> 
+                    <li><a class="dropdown-item vr-nav-link" href="">Categoria2</a></li> 
+                    <li><a class="dropdown-item vr-nav-link" href="">Categoria3</a></li> 
+                </ul>
+                </li>
+
+            <li><a class="vr-nav-link" href="../index.html#contacto">Contacto</a></li>
+            <li><a class="vr-nav-link" href="../index.html#faq">FAQ</a></li>
+            <!--aca estaba gestion-->
+            <li><a class="vr-nav-link" href="../consumar compra - cliente/finalizar-compra.html"><i class="bi bi-cart-fill"></i></a></li>
+        </ul>
+
+        <!-- buscar y login btn -->
+        <form class="d-flex">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search" aria-label="Buscar">             
+                <span class="input-group-text btn btn-green-inverted"><i class="fas fa-search"></i></span>
+            </div>
+            <button id="login-btn-sin-sesion" type="button" class="btn btn-green-inverted btn-login"><i class="fas fa-user"></i></button> 
+            <button id="login-btn-con-sesion" type="button"><img class="user-prof-mini" src="../img/chala-color.jpeg" alt="user-profile-pic"></button>
+        </form>
+
+        <!-- Login pop up -->
+        <div id="login-form-popup" class="all-form login-form">
+
+            <div class="alert blue-alert" role="alert">
+                Inicia Sesión para gestionar la tienda.
+            </div>
+    
+            <div class="all-login-form">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="emailInput" placeholder="email@email.com">
+                    <label for="emailInput">Email</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+                    <label for="floatingPassword">Contraseña</label>
+                </div>
+
+                <div class="forget">
+                    <p class="small-a"><a href="reset-password/reset-password.html"></a>Olvidé mi contraseña</a></p> 
+                    <p class="small white-font">No tienes usuario? <br>puedes <a class="small-a" href="create-user/create-user.html">registrarte aquí</a></p> 
+                </div>
+                <button id ="send-login" type="button" class="send btn btn-outline-success btn-right"><i class="fas fa-paper-plane"></i></button>
+                <button onclick="deleteLoginForm()" type="button" class="cancel btn btn-outline-danger btn-left"><i class="fas fa-trash-alt"></i></button>
+            </div>
+    
+            <div class="alert red-alert" role="alert">
+                Usuario o contraseña incorrecta. 
+            </div>
+    
+            <div class="alert red-alert" role="alert">
+                El usuario no existe, desea <a href="create-user/create-user.html"> crear un usuario nuevo?</a> 
+            </div>
+    
+        </div>
+
+        <!--ventanita verde de sesion de usuario logueado -->
+        <div id="user-form-logueado" class="all-form login-form">
+            <div class="nav-bar-pop-up-user-info">
+                <img class="user-prof-mini" src="../img/chala-color.jpeg" alt="user-profile-pic">
+                <p id="nombre-de-usuario">UserName</p>
+            </div>
+            <div id="login-successful-alert" class="alert blue-alert" role="alert">
+                Ha iniciado sesión exitosamente!
+            </div>
+            <div class="login-success-btns">
+                <div class="user-settings">
+                    <a href="../gestion-cuenta-cliente/gestion-cuenta-cliente.html">
+                        <button class="btn-simple-rounded user-settings-btn"><i class="fas fa-cog"></i></button>
+                    </a>
+                    <div class="hint-container"><p class="hint">Configuración</p></div>
+                </div>
+                <div class="user-log-out">
+                    <button id="btn-logout" class="btn-simple-rounded user-settings-btn"><i class="fas fa-sign-out-alt"></i></button>
+                    <div class="hint-container"><p class="hint">Cerrar Sesión</p></div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+        <!-- ------------------- Login Form ------------------- -->
+    <!-- <div id="login-form" class="all-form section">
+
+        <div class="alert blue-alert" role="alert">
+            Inicia Sesión para gestionar la tienda.
+        </div>
+
+        <div class="all-login-form">
+            <div id="login-form">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="email@email.com">
+                    <label for="floatingInput">Email</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+                    <label for="floatingPassword">Contraseña</label>
+                </div>
+            </div>
+            <div class="forget">
+                <p class="small-a"><a class="small-a" href="reset-password/reset-password.html">Olvidé mi contraseña</a></p> 
+                <p class="small almost-black-font">No tienes usuario? puedes <a class="small-a" href="create-user/create-user.html">registrarte aquí</a></p> 
+            </div>
+            <button onclick="okLogin()" id ="send-login" type="button" class="send btn btn-outline-success btn-right"><i class="fas fa-paper-plane"></i></button>
+            <button onclick="deleteLoginForm()" type="button" class="cancel btn btn-outline-danger btn-left"><i class="fas fa-trash-alt"></i></button>
+        </div>
+
+        <div class="alert red-alert" role="alert">
+            Usuario o contraseña incorrecta. 
+        </div>
+
+        <div class="alert red-alert" role="alert">
+            El usuario no existe, desea <a href="create-user/create-user.html"> crear un usuario nuevo?</a> 
+        </div>
+
+    </div> -->
+    <!-- ------------------- Gestión All ------------------- -->
+    <div id="gestion-all">
+
+        <!-- ------------------- Tabs ------------------- -->
+        <div id="gestion-tabs">
+            <ul class="nav nav-tabs gestion-tabs"  role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a onclick="tabProductos()" class="nav-link active" aria-selected="true" data-bs-toggle="tab" aria-current="page" role="tab"><i class="fas fa-seedling"></i>Productos</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a onclick="tabUsuarios()" class="nav-link" aria-selected="false" data-bs-toggle="tab" role="tab"><i class="fas fa-user"></i>Usuarios</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a onclick="tabVentas()" class="nav-link" aria-selected="false" data-bs-toggle="tab" role="tab"><i class="fas fa-store-alt"></i>Ventas</a> 
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a onclick="tabPosts()" class="nav-link" aria-selected="false" data-bs-toggle="tab" role="tab"><i class="fas fa-newspaper"></i>Posts</a> 
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a onclick="tabPagina()" class="nav-link" aria-selected="false" data-bs-toggle="tab" role="tab"><i class="fas fa-pencil-ruler"></i>Página</a> 
+                </li>
+            </ul>
+        </div>
+
+        <!-- ------------------- Productos ------------------- -->
+
+        <div id="gestion-productos" class="section prod-grid-container table">
+
+            <div id="productos-filter-add" class="filter-and-add-section">
+
+                <div class="input-group mb-3 filter">
+                    <span class="input-group-text"><i class="bi bi-filter"></i></span>
+                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    <span class="input-group-text"><i class="bi bi-search"></i></span>
+                </div>
+    
+                <a href="create-product/form-create-product.php">
+                    <button class="btn btn-outline-success btn-right"><i class="fas fa-plus"></i></button>
+                </a>
+            </div>
+
+            <div id="prod-title"></div>
+            <div>
+                <table id="prod-content"></table>
+            </div>
+        </div>
+
+        <!-- ------------------- Usuarios ------------------- -->
+        <div id="gestion-usuarios" class="section">
+
+            <div id="usuarios-filter-add" class="filter-and-add-section">
+
+                <div class="input-group mb-3 filter">
+                    <span class="input-group-text"><i class="bi bi-filter"></i></span>
+                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    <span class="input-group-text"><i class="bi bi-search"></i></span>
+                </div>
+    
+                <a href="create-user/create-user.html">
+                    <button class="btn btn-outline-success btn-right"><i class="fas fa-plus"></i></button>
+                </a>
+            </div>
+
+            
+            <div id="usu-title"></div>
+            <div>
+                <table id="usu-content"></table>
+            </div>
+
+        </div>
+
+        <!-- ------------------- Ventas ------------------- -->
+        <div id="gestion-ventas" class="section">
+
+            <div id="ventas-filter-add" class="filter-and-add-section">
+
+                <div class="input-group mb-3 filter">
+                    <span class="input-group-text"><i class="bi bi-filter"></i></span>
+                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    <span class="input-group-text"><i class="bi bi-search"></i></span>
+                </div>
+    
+                <a href="">
+                    <button class="btn btn-outline-success btn-right"><i class="fas fa-plus"></i></button>
+                </a>
+            </div>
+
+            
+            <div id="ventas-title"></div>
+            <div>
+                <table id="ventas-content"></table>
+            </div>
+
+        </div>
+
+        <!-- ------------------- Posts ------------------- -->
+        <div id="gestion-posts" class="section">
+
+            <div id="posts-filter-add" class="filter-and-add-section">
+
+                <div class="input-group mb-3 filter">
+                    <span class="input-group-text"><i class="bi bi-filter"></i></span>
+                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    <span class="input-group-text"><i class="bi bi-search"></i></span>
+                </div>
+
+                <a href="">
+                    <button class="btn btn-outline-success btn-right"><i class="fas fa-plus"></i></button>
+                </a>
+            </div>
+            
+            <div id="posts-title"></div>
+            <div>
+                <table id="posts-content"></table>
+            </div>
+
+        </div>
+
+        <!-- ------------------- Pagina ------------------- -->
+        <div id="gestion-pagina" class="section">
+
+            <div id="pagina-title"></div>
+            <div>
+                <table id="pagina-content"></table>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ------------------- FOOTER ------------------- -->
+    <div id="footer" class="flex-waves-content content-waves">
+
+        <!--Waves Container-->
+        <div class="waves-background">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(0,0,0,0.7)" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(0,0,0,0.5)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(0,0,0,0.3)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#000" />
+                </g>
+            </svg>
+        </div>
+
+        <div class="footer-content">
+            <h3 class="footer-title">Seguinos en nuestras redes!</h3><br>
+            <ul id="social-networks" class="footer-ul">
+            </ul>  
+        </div>
+
+    </div>
+
+    <!-- Bootstrap Js and Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+    <!-- Mis scripts -->
+    <script src="../jquery.js"></script>
+    <script src="cabecera.js"></script>
+    <script src="gestion.js"></script>
+    <script src="productos.js"></script>
+    <!--
+    <script src="mensajes.js"></script>
+    <scritp src="usuarios.js"></scritp>
+    -->
+    
+
+</body>
+</html>

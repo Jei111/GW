@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>crud api rest ajax</h1>
+    <section class="crud">
+        <article>
+            <h2 class="crud-title">Agregar santo</h2>
+            <form class="crud-form">
+                <input type="text" name="nombre" placeholder="nombre" required>
+                <br>
+                <input type="text" name="apellido" placeholder="ape" required>
+                <br>
+                <input type="text" name="fechaNac" placeholder="fecha" required>
+                <br>
+                <input type="text" name="pais" placeholder="pais" required>
+                <br>
+                <input type="submit" value="Enviar"> 
+                <input type="hidden" name="id">
+            </form>
+        </article>
+        <article>
+            <h2>ver santos</h2>
+            <table class="crud-table">
+                <thead>
+                    <tr>
+                        <th>nombre</th>
+                        <th>apellido</th>
+                        <th>fechaNac</th>
+                        <th>pais</th>
+                        <th>accion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </article>
+    </section>
+    <template id="crud-template" >
+        <tr>
+            <td class="nombre"></td>
+            <td class="apellido"></td>
+            <td class="fechaNac"></td>
+            <td class="pais"></td>
+            <td>
+                <button class="edit">editar</button>
+                <button class="delete">eliminar</button>
+            </td>
+        </tr>
+
+    </template>
+    <script>
+        const d = document,
+        $table = d.querySelector(".crud-table"),
+        $form = d.querySelector(".crud-form"),
+        $title = d.querySelector(".crud-title"),
+        $template = d.getElementById("crud-template").content,
+        $fragment = d.createDocumentFragment()
+
+        const ajax = (options) => {
+            let {url, method, success, error, data} = options
+            const xhr = new XMLHttpRequest()
+
+            xhr.addEventListener("readystatechange", e => {
+                if(xhr.readyState !== 4) return
+
+                if (xhr.status >= 200 && xhr.status < 300){
+                    let json = JSON.parse(xhr.responseText)
+                    success(json)
+                }else{
+                    let message = xhr.statusText || "ocurrio un error"
+                    error(`Error ${xhr.status}: ${message}`)
+                }
+
+            })
+            xhr.open(method || "GET", url)
+            xhr.setRequestHeader("Content-type", "application/json; charset=utf-8")
+            xhr.send(JSON.stringify(data))
+        }
+
+        const getAll = () => {
+            ajax({
+                method: "GET",
+                url: "usuarios.php?id=14",
+                success: (res) => {
+                    console.log(res)
+                    //console.log(res.nombre)
+                    res.forEach(el=>{
+                        $template.querySelector(".nombre").textContent = el.nombre
+                        $template.querySelector(".apellido").textContent = el.apellido
+                        $template.querySelector(".fechaNac").textContent = el.fechaNac
+                        $template.querySelector(".pais").textContent = el.pais
+                        $template.querySelector(".edit").dataset.id = el.id
+                        $template.querySelector(".edit").dataset.nombre = el.nombre
+                        $template.querySelector(".edit").dataset.apellido = el.apellido
+                        $template.querySelector(".edit").dataset.fechaNac = el.fechaNac
+                        $template.querySelector(".edit").dataset.pais = el.pais
+                        $template.querySelector(".delete").dataset.id = el.id
+
+                        let $clone = d.importNode($template, true)
+                        $fragment.appendChild($clone)
+                    })
+                    $table.querySelector("tbody").appendChild($fragment)
+                },
+                error: (err) => {
+                    console.error(err)
+                    $table.insertAdjacentHTML("afterend", `<p><b> ${err} </b></p> `)
+                },
+                data: null
+            })
+        }
+
+        d.addEventListener("DOMContentLoaded", getAll)
+
+        d.addEventListener("submit", e => {
+            if (e.target === $form){
+                e.preventDefault()
+                if(!e.target.id.value){
+                    //create POST
+                    ajax({
+                        url: "http://localhost/api1/usuarios_resp.php",
+                        method: "POST",
+                        success: (res) => location.reload(),
+                        error: ( ) => $form.insertAdjacentHTML("afterend", ` <p><b> ${err}</b></p>  `),
+                        data: {
+                            nombre: e.target.nombre.value,
+                            apellido: e.target.apellido.value,
+                            fechaNac: e.target.fechaNac.value,
+                            pais: e.target.pais.value
+
+                        }
+                    })
+                }else{
+                    //update PUT
+                    ajax({
+                        url: `http://localhost/api1/usuarios.php?id=${e.target.id.value}`,
+                        method: "PUT",
+                        success: (res) => location.reload(),
+                        error: () => $form.insertAdjacentHTML("afterend", `<p><b> ${err} </p></b>`),
+                        data: {
+                            nombre: e.target.nombre.value,
+                            apellido: e.target.apellido.value,
+                            fechaNac: e.target.fechaNac.value,
+                            pais: e.target.pais.value
+                        }
+                    })
+                }
+            }
+        } )
+
+        d.addEventListener("click", e=>{
+            if(e.target.matches(".edit")){
+               
+                $title.textContent = "editar santo"
+                $form.nombre.value = e.target.dataset.nombre
+                $form.apellido.value = e.target.dataset.apellido
+                $form.fechaNac.value = e.target.dataset.fechaNac
+                $form.pais.value = e.target.dataset.pais
+
+                $form.id.value = e.target.dataset.id
+            }
+
+            if(e.target.matches(".delete")){
+                let isDelete = confirm(`eguro de eliminar ${e.target.dataset.id} ?`)
+
+                if(isDelete){
+                    ajax({
+                        url: `http://localhost/api1/usuarios.php?id=${e.target.dataset.id}`,
+                        method: "DELETE",
+                        success: (res) => location.reload(),
+                        error: () => alert(err)
+                    })
+                }
+            }
+        })
+
+
+    </script>
+</body>
+</html>

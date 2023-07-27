@@ -1,0 +1,56 @@
+/* 
+importar este archivo a todos los css que hayan, 
+para así poder usar los mismos colores en todo el sitio, 
+y en caso de cambiarlos, solo se cambia acá
+
+@import url(colores.css); 
+*/
+
+:root{
+
+    /* verdes principales */
+    --green-light-color: #6e911b;
+    --green-logo-color: #4E6005;
+    --green-color: #78930e; /* este es el principal */
+    --green-dark-color: #2b4102;
+    --green-fluor-transp-40-color: #2ee59d66; /* abrillantado para efecto en botones */
+
+    /* botones */
+    --green-btn-color: #4CAF50;
+    --red-btn-color: #BF0404;
+    --skyblue-btn-color: skyblue;
+
+    /* links */
+    --blue-link-color: #2eaaff;
+
+    /* escala de grises */
+    --white-color: white;
+    --gray10-color: lightgray;
+    --gray90-color: #1f1f1f; /* fuentes */
+    --black-color: black;
+
+    --black-transp80-color: #00000080;
+    --black-transp10-color: #0000001a;
+    --gray70-transp30-color: #63636346;
+
+    /* alerts */
+    --red-alert-font-color: #842029;
+    --red-alert-background-color: #f8d7da;
+    --red-alert-border-color: #f5c2c7;
+    
+    --green-alert-font-color: #0f5132;
+    --green-alert-background-color: #0f5132;
+    --green-alert-border-color: #badbcc;
+
+    --blue-alert-font-color: #084298;
+    --blue-alert-background-color: #cfe2ff;
+    --blue-alert-border-color: #b6d4fe;
+
+    --yellow-alert-font-color: #664d03;
+    --yellow-alert-background-color: #fff3cd;
+    --yellow-alert-border-color: #ffecb5;
+
+    --gray-alert-font-color: #41464b;
+    --gray-alert-background-color: #e2e3e5;
+    --gray-alert-border-color: #d3d6d8;
+  }

@@ -1,0 +1,303 @@
+*::selection {
+    background-color: #1abc9c;
+    }
+
+html, 
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#about, 
+#faq{
+    min-height: 80vh;
+}
+
+.about > h3, 
+#productos > h3, 
+#faq >h3, 
+#contacto >h3, 
+.footer-content > h1, 
+.faq-tit {
+    text-align: center;
+    color: #1abc9c;
+}
+
+.about > h3::selection, 
+#productos > h3::selection, 
+#faq >h3::selection, 
+#contacto >h3::selection, 
+.footer-content > h1::selection, 
+.faq-tit::selection {
+    background-color: black;
+}
+
+#contacto, 
+#productos {
+    min-height: 50vh;
+}
+
+.about,  
+.contacto,
+.faq{
+padding: 5%;
+max-width: 800px;
+margin: 0 auto;
+}
+
+
+/* ------------------- BOTONES ------------------- */
+
+/* grupo de botones de categorías en el home */
+
+.cat-group {
+    column-gap: 5%;
+    margin: 5% 20%;
+    display: inline-flex;
+    position: relative;
+  }
+
+/* el botón de categorias en home */
+
+  .cat-btn{
+    box-shadow: 2px 8px 10px #00000080;
+    background-color: transparent;
+    border-radius:20px;
+    border: 4px solid #1abc9c;
+    color: #1abc9c;
+  
+    text-shadow:1px 1px 3px #00000080;
+  
+    cursor:pointer;
+  }
+  
+  .cat-btn:hover{
+    background-color: #1abc9c;
+  }
+  
+  .cat-i {
+    padding: 2vw;
+    cursor: pointer;
+    font-size: 8vw;
+    transition: all 0.3s ease 0s;
+  }
+  
+  .cat-i:hover {
+      color: #fff;
+      transform: translateY(7px);
+  }
+
+  .btn-more-info{
+    margin: 0 auto;
+    position: relative;
+    display: block;
+    max-width: 20vw;
+  }
+
+  .btn-left{
+    float: left;
+    margin-top: 10px;
+    min-width: 100px;
+  }
+
+  .btn-right{
+    float: right;
+    margin-top: 10px;
+    min-width: 100px;
+  }
+
+/* ------------------- FORMULARIOS ------------------- */
+
+/* para que el formulario no ocupe toda la pantalla */
+.all-form {
+  margin:0 auto;
+  padding: 10px;
+  max-width: 800px;
+}
+
+/* ------------------- SECCIONES ENCUADRADAS ------------------- */
+
+.section {
+  border: solid black 1px;
+  border-radius: 10px;
+  margin: 2%;
+  padding: 5%;
+  max-width: 1000px;
+}
+
+/* ------------------- TITULO ------------------- */
+
+  .title{
+      margin: 2%;
+  }
+
+  .title-txt{
+      text-align: center;
+  }
+
+  .subtitle{
+      text-align: center;
+  }
+
+  /* ------------------- NAVBAR ------------------- */
+
+  .vr-navbar {
+    background-color: #1abc9c;
+    padding: 1%; 
+    box-shadow: #0005 0px 5px 8px;   
+  }
+
+  .vr-navbar > ul{
+    list-style-type: none;
+    display: inline;
+  }
+
+  .vr-navbar > ul > li{
+    display: inline;
+    margin: 0 1%;
+  } 
+
+  .vr-navbar > form{
+      float: right;
+      margin: -5 auto;
+  }
+
+  .vr-nav-link,  
+  .vr-nav-link > a {
+    color: white;
+  }
+
+  .vr-nav-link:hover, 
+  .vr-nav-link > a:hover {
+      color:grey;
+  }
+
+/* ------------------- CAROUSEL ------------------- */
+
+
+.carousel-item{
+  max-height: 500px;
+}
+
+/* ------------------- FAQ ------------------- */
+
+.faq > ul > li {
+    margin: 5% auto;
+}
+
+.faq-tit {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 2%;
+}
+
+/* ------------------- CONTACTO ------------------- */
+
+#contacto > .form-floating {
+  margin-top: 10px;
+}
+
+/* ------------------- FOOTER ------------------- */
+
+.footer {
+    height: 25vh;
+    position: relative;
+    position: -webkit-sticky; /* Safari */
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+  }
+  
+.footer-content{
+    background-color: black;
+}
+
+.footer-title{
+    text-shadow: none;
+    font-size: 2rem;
+    color: white;
+}
+
+.footer-ul {
+display: inline-flex;
+padding-left: 0;
+}
+
+.footer-ul > li {
+display: inline-block;
+}
+  
+.footer-icon {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 2rem;
+}
+
+.footer-icon:hover{
+    color: #d93b95;
+}
+
+/* FOOTER WAVES */
+
+.flex-waves-content { /*Flexbox for containers*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+  
+.content-waves {
+    display: block;
+    position:relative;
+    height:30vh;
+    text-align:center;
+}
+  
+.waves {
+    position:relative;
+    width: 100%;
+    height:15vh;
+    margin-bottom:-7px; /*Fix for safari gap*/
+    min-height:100px;
+    max-height:150px;
+}
+  
+/* Animation */
+  
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+  .parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px,0,0);
+    }
+    100% { 
+      transform: translate3d(85px,0,0);
+    }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+    .waves {
+      height:40px;
+      min-height:40px;
+    }
+    .content {
+      height:30vh;
+    }
+}

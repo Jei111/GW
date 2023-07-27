@@ -1,0 +1,158 @@
+
+<style>
+    .vr-navbar {
+    background-color: #1abc9c;
+    padding: 1%; 
+    box-shadow: #0005 0px 5px 8px;   
+  }
+
+  .vr-navbar > ul{
+    list-style-type: none;
+    display: inline;
+  }
+
+  .vr-navbar > ul > li{
+    display: inline;
+    margin: 0 1%;
+  } 
+
+  .vr-navbar > form{
+      float: right;
+      margin: -5 auto;
+  }
+
+  .vr-nav-link,  
+  .vr-nav-link > a {
+    color: white;
+  }
+
+  .vr-nav-link:hover, 
+  .vr-nav-link > a:hover {
+      color:grey;
+  }
+</style>
+
+<!-- ------------------- NavBar ------------------- -->
+
+<!-- hamburguer menu icons -->
+<div id="responsive-nav" class="responsive-nav">
+    <div onclick="openMenu()" id="hamburguer-menu-icon" class="hamburguer-menu-icon"><i class="bi bi-list"></i></div>
+    <div onclick="closeMenu()" id="x-menu-icon" class="x-menu-icon"><i class="bi bi-x-lg"></i></div>
+</div>
+
+<!-- responsive navbar menu -->
+<div id="responsive-menu" class="responsive-menu">
+    <a href="../index.html"><li class="navbar-logo"><img src="../img/grownline-logo-white-03.svg" alt=""></li></a> 
+    <div><a class="vr-nav-link" href="../index.html#about">Sobre Nosotros</a></div>
+    <div>
+        <a class="vr-nav-link dropdown-toggle" href="../index.html#productos" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Productos
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <li><a class="dropdown-item vr-nav-link" href="">Categoria1</a></li> 
+        <li><a class="dropdown-item vr-nav-link" href="">Categoria2</a></li> 
+        <li><a class="dropdown-item vr-nav-link" href="">Categoria3</a></li> 
+        </ul>
+    </div>
+    <div><a class="vr-nav-link" href="../index.html#contacto">Contacto</a></div>
+    <div><a class="vr-nav-link" href="../index.html#faq">FAQ</a></div>
+    <!-- acá estaría gestión DARIO arreglar esto con el tema del login -->
+    <li><a class="vr-nav-link" href="../consumar compra - cliente/finalizar-compra.html"><i class="bi bi-cart-fill"></i></a></li>
+</div>
+<div id="responsive-menu-cover" class="responsive-menu-cover"></div> <!-- responsive-menu-cover sirve para cuando click en menu => fondo negro para no ver la página y solo ver el menu -->
+
+<!-- nav bar para desktop -->
+<nav class="vr-navbar">
+
+    <!-- menu list -->
+    <ul id="navbar-list">
+        <a href="../index.html"><li class="navbar-logo"><img src="../img/grownline-logo-white-03.svg" alt=""></li></a> 
+
+        <li><a class="active vr-nav-link" href="../index.html#about">Sobre Nosotros</a></li>
+
+        <li class="dropdown vr-nav-item">
+            <a class="vr-nav-link dropdown-toggle" href="../index.html#productos" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Productos
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item vr-nav-link" href="">Categoria1</a></li> 
+                <li><a class="dropdown-item vr-nav-link" href="">Categoria2</a></li> 
+                <li><a class="dropdown-item vr-nav-link" href="">Categoria3</a></li> 
+            </ul>
+            </li>
+
+        <li><a class="vr-nav-link" href="../index.html#contacto">Contacto</a></li>
+        <li><a class="vr-nav-link" href="../index.html#faq">FAQ</a></li>
+        <!--aca estaba gestion-->
+        <li><a class="vr-nav-link" href="../consumar compra - cliente/finalizar-compra.html"><i class="bi bi-cart-fill"></i></a></li>
+    </ul>
+
+    <!-- buscar y login btn -->
+    <form class="d-flex">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search" aria-label="Buscar">             
+            <span class="input-group-text btn btn-green-inverted"><i class="fas fa-search"></i></span>
+        </div>
+        <button onclick="loginSuccessful()" id="login-btn-sin-sesion" type="button" class="btn btn-green-inverted btn-login"><i class="fas fa-user"></i></button> 
+        <button id="login-btn-con-sesion" type="button"><img class="user-prof-mini" src="../img/chala-color.jpeg" alt="user-profile-pic"></button>
+    </form>
+
+    <!-- Login pop up -->
+    <div id="login-form-popup" class="all-form login-form">
+
+        <div class="alert blue-alert" role="alert">
+            Inicia Sesión para gestionar la tienda.
+        </div>
+
+        <div class="all-login-form">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="emailInput" placeholder="email@email.com">
+                <label for="emailInput">Email</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+                <label for="floatingPassword">Contraseña</label>
+            </div>
+
+            <div class="forget">
+                <p class="small-a"><a href="../gestion/reset-password/reset-password.html"></a>Olvidé mi contraseña</a></p> 
+                <p class="small white-font">No tienes usuario? <br>puedes <a class="small-a" href="../gestion/create-user/create-user.html">registrarte aquí</a></p> 
+            </div>
+            <button id ="send-login" type="button" class="send btn btn-outline-success btn-right"><i class="fas fa-paper-plane"></i></button>
+            <button onclick="deleteLoginForm()" type="button" class="cancel btn btn-outline-danger btn-left"><i class="fas fa-trash-alt"></i></button>
+        </div>
+
+        <div class="alert red-alert" role="alert">
+            Usuario o contraseña incorrecta. 
+        </div>
+
+        <div class="alert red-alert" role="alert">
+            El usuario no existe, desea <a href="../gestion/create-user/create-user.html"> crear un usuario nuevo?</a> 
+        </div>
+
+    </div>
+
+    <!--ventanita verde de sesion de usuario logueado -->
+    <div id="user-form-logueado" class="all-form login-form">
+        <div class="nav-bar-pop-up-user-info">
+            <img class="user-prof-mini" src="../img/chala-color.jpeg" alt="user-profile-pic">
+            <p id="nombre-de-usuario">UserName</p>
+        </div>
+        <div id="login-successful-alert" class="alert blue-alert" role="alert">
+            Ha iniciado sesión exitosamente!
+        </div>
+        <div class="login-success-btns">
+            <div class="user-settings">
+                <a href="../gestion-cuenta-cliente/gestion-cuenta-cliente.html">
+                    <button class="btn-simple-rounded user-settings-btn"><i class="fas fa-cog"></i></button>
+                </a>
+                <div class="hint-container"><p class="hint">Configuración</p></div>
+            </div>
+            <div class="user-log-out">
+                <button id="btn-logout" class="btn-simple-rounded user-settings-btn"><i class="fas fa-sign-out-alt"></i></button>
+                <div class="hint-container"><p class="hint">Cerrar Sesión</p></div>
+            </div>
+        </div>
+
+    </div>
+</nav>

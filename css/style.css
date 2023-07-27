@@ -1,0 +1,673 @@
+@import url(colores.css);
+
+*::selection {
+    background-color: var(--green-light-color);
+    }
+
+html, 
+body {
+  /* no poner height 100% xq no deja que el navbar le funcione el position sticky */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+.hint-container {
+  display: none;
+  padding: 3%;
+  margin: 2px;
+  position: relative;
+  border: 3px solid var(--black-color);
+  align-items: center;
+}
+
+#about, 
+#faq {
+    min-height: 80vh;
+    background-color: var(--white-color);
+    min-width: 100%;
+  }
+
+#about h3,
+#about p,  
+#faq h3, 
+#faq ul {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* titulos */
+.about > h3, 
+#productos > h3, 
+#faq >h3, 
+#contacto >h3, 
+.footer-content > h1, 
+.faq-tit {
+    text-align: center;
+}
+
+/* titulos de igual color que selección o con fondo igual a selección de color */
+.about > h3::selection, 
+#productos > h3::selection, 
+#faq >h3::selection, 
+#contacto >h3::selection, 
+.footer-content > h1::selection, 
+.faq-tit::selection {
+    background-color: var(--black-color);
+    text-shadow: none;
+}
+
+/* secciones de de fondo de color */
+#contacto, 
+#productos {
+    min-height: 50vh;
+    background-color: var(--green-color);
+    padding: 5%;
+}
+
+/* titulos de fondo de color */
+#productos h3,
+#contacto h3 {
+  color: var(--white-color);
+  text-shadow: 3px 3px var(--black-color);
+}
+
+.about,  
+.faq{
+padding: 5%;
+max-width: 800px;
+/* margin: 0 auto; */
+}
+
+/* ------------------- BACKGROUND IMG DECORACIÓN ------------------- */
+
+.chala-border-up, 
+.chala-border-down {
+  display: inline-grid;
+  background-image: url(../img/chala-c-efecto-04-03.svg); 
+  background-repeat: repeat-x;
+  width: 100%;
+  height: 5%;
+  background-color: var(--white-color);
+}
+
+.chala-border-down{
+  transform: rotate(180deg);
+  background-color: var(--white-color);
+}
+
+/* ------------------- ALERTAS ------------------- */
+.alert {
+  padding: 5%;
+  margin: 5%;
+  color: var(--gray90-color);
+  border-radius: 10px;
+  vertical-align: middle;
+}
+
+.red-alert {
+  color: var(--red-alert-font-color);
+  background-color: var(--red-alert-background-color);
+  border-color: var(--red-alert-border-color);
+}
+
+.green-alert {
+  color: var(--green-alert-font-color);
+  background-color: var(--green-alert-background-color);
+  border-color: var(--green-alert-border-color);
+}
+
+.blue-alert {
+  color: var(--blue-alert-font-color);
+  background-color: var(--blue-alert-background-color);
+  border-color: var(--blue-alert-border-color);
+}
+
+/* ------------------- BOTONES ------------------- */
+
+/* grupo de botones de categorías en el home */
+.cat-group {
+    column-gap: 5%;
+    margin: 5% 7%;
+    display: inline-flex;
+    position: relative;
+  }
+
+/* el botón de categorias en home */
+  .cat-btn{
+    box-shadow: 2px 8px 10px var(--black-color);
+    background-color: transparent;
+    border-radius:20px;
+    border: 4px solid var(--white-color);
+    color: var(--white-color);
+  
+    text-shadow:1px 1px 3px var(--main-black-transp-80-color);
+  
+    cursor:pointer;
+  }
+  
+  .cat-btn:hover{
+    background-color: var(--white-color);
+  }
+  
+  .cat-i {
+    padding: 2vw;
+    cursor: pointer;
+    font-size: 8vw;
+    transition: all 0.3s ease 0s;
+  }
+  
+  .cat-i:hover {
+      color: var(--green-color);
+      transform: translateY(7px);
+  }
+
+  .btn-more-info{
+    margin: 0 auto;
+    position: relative;
+    display: block;
+    max-width: 20vw;
+  }
+
+  /* botones alineados izq o der x ej en formularios */
+  .btn-left{
+    float: left;
+    margin-top: 10px;
+    min-width: 100px;
+  }
+
+  .btn-right{
+    float: right;
+    margin-top: 10px;
+    min-width: 100px;
+  }
+
+  .btn-rounded {
+    border: none;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 45px;
+    transition: all 0.3s ease 0s;
+    box-shadow: 0px 8px 15px var(--black-transp10-color);
+  }
+  .btn-rounded:hover {
+    box-shadow: 0px 15px 20px var(--green-fluor-transp-40-color);
+    transform: translateY(7px);
+  }
+
+  .btn-simple-rounded {
+    border: 3px solid var(--black-color);
+    background-color: var(--gray70-transp30-color);
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 45px;
+    transition: all 0.3s ease 0s;
+  }
+
+  .btn-simple-rounded:hover {
+    box-shadow: 0px 15px 20px var(--gray70-transp30-color);
+    transform: translateY(7px);
+  }
+
+  .btn-full-green {
+    background-color: var(--green-btn-color);
+    color: var(--white-color);
+  }
+
+  .btn-full-green:hover {
+    background-color: var(--green-color);
+    color: var(--gray10-color);
+  }
+
+  .btn-green-inverted {
+    background-color: var(--white-color);
+    color: var(--green-btn-color);
+  }
+
+  .btn-green-inverted:hover {
+    background-color: var(--gray10-color);
+    color: var(--green-btn-color);
+  }
+
+  .btn-full-red {
+    background-color: var(--red-btn-color);
+    color: var(--white-color);
+  }
+
+  .btn-full-red:hover {
+    background-color: var(--red-btn-color);
+    color: var(--gray10-color);
+  }
+
+  .btn-red-inverted {
+    background-color: var(--white-color);
+    color: var(--red-btn-color);
+  }
+
+  .btn-red-inverted:hover {
+    background-color: var(--gray10-color);
+    color: var(--red-btn-color);
+  }
+
+/* ------------------- FORMULARIOS ------------------- */
+
+/* para que el formulario no ocupe toda la pantalla */
+.all-form {
+  margin:0 auto;
+  padding: 10px;
+  max-width: 800px;
+}
+
+/* ------------------- SECCIONES ENCUADRADAS ------------------- */
+
+.section-group{
+  background-color: var(--green-dark-color);
+  max-height: 500px;
+  display:flex;
+  width: 100%;
+  padding: 2%;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+
+.section-group::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  margin: 1% auto;
+}
+
+.section-group::-webkit-scrollbar-track {
+  border-radius: 4px;
+  background-color: var(--green-dark-color);
+  margin: 1% auto;
+}
+
+.section-group::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: var(--green-light-color);
+  margin: 1% auto;
+}
+
+.products-slide{
+  padding: 0%;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  display: inline-block;
+  background-color: var(--green-color);
+  border: 6px solid var(--black-color);
+  border-radius: 10px;
+  margin: 0 1%;
+}
+
+#cannabis-section, 
+#tierra-section, 
+#complementos-section, 
+#comida-section {
+  display: none;
+}
+
+.products-slide > img {
+  height: 300px;
+  border-radius: 3px;
+}
+
+/* ------------------- TITULO ------------------- */
+
+.title{
+  padding: 2%;
+  text-align: center;
+  height: 80vh;
+  z-index: -10;;
+}
+
+.title-txt{
+    display: inline-grid;
+    background-image: url(../img/grownline-logo-white-03.svg); 
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 50%;
+    margin: 15% auto 0 auto;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -10;
+}
+
+.title img{
+  z-index: -20;
+  display: block;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.subtitle{
+  position: fixed;
+  margin: 0 auto;
+  display: block;
+  top: 60%;
+  left: 30%;
+  color: var(--white-color);
+  font-size: 2rem;
+  font-weight: 500;
+  /* background-color: black; */
+  text-shadow: 4px 4px 4px var(--black-color);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  z-index: -10;
+}
+
+/* ------------------- NAVBAR ------------------- */
+
+.vr-navbar {
+  background-color: var(--green-color); /* ojo que está determinado en main.js*/
+  padding: 1%; 
+  box-shadow: var(--black-color) 0px 5px 10px;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0; /* required */
+  z-index: 10;
+}
+
+.vr-navbar > ul{
+  list-style-type: none;
+  display: inline;
+}
+
+.vr-navbar > ul > li{
+  display: inline-flex;
+  margin: 0 1%;
+} 
+
+/* navbar buttons */
+.navbar-logo {
+  display: inline-grid;
+  width: 13%;
+  height: 4%;
+}
+
+.vr-nav-link, 
+.vr-nav-link a {
+  color: var(--white-color);
+  font-weight: 800;
+}
+
+.vr-nav-link:hover, 
+.vr-nav-link a:hover {
+  color: var(--blue-link-color);
+}
+
+.vr-nav-link:visited, 
+.vr-nav-link a:visited {
+  color: var(--gray10-color);
+}
+
+/* productos dropdown */
+.dropdown-menu {
+  background-color: var(--green-color);
+}
+
+.dropdown-item:hover {
+  background-color: var(--blue-link-color);
+}
+
+/* login y button */
+.vr-navbar > form{
+  float: right;
+  margin: -5 auto;
+}
+
+.vr-navbar > form > button {
+  margin: 0 2%;
+  height: 6vh;
+  display: inline-flex;
+  align-items: center;
+}
+
+.vr-navbar > form > button > i, 
+.vr-navbar > form > button > p {
+  margin: 2px;
+}
+
+/* arreglar acá */
+.vr-navbar form button:hover .vr-navbar > form > button > i, 
+.vr-navbar form button:hover .vr-navbar > form > button > p {
+  color: var(--blue-link-color);
+}
+
+/* responsive nav */
+.responsive-nav, 
+.responsive-menu {
+  display: none;
+}
+
+
+/* login dropdown o pop up */
+.login-form{
+  width: 25%;
+  display: grid;
+  position: absolute;
+  right: 1%;
+  background-color: var(--green-color);
+  text-align: center;
+  border-radius: 10px;
+  border: 3px solid var(--black-color);
+}
+
+#login-form {
+  display: none;
+}
+
+#user-form{
+  display: none;
+}
+
+#login-successful-alert {
+  display: none;
+}
+
+.open-successfult-login-alert {
+  display: block;
+  -moz-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Opera */
+  animation: cssAnimation 0s ease-in 5s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.nav-bar-pop-up-user-info{
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-bar-pop-up-user-info p {
+  margin: 2%;
+  font-weight: 800;
+}
+
+.user-prof-mini {
+  border-radius: 50%;
+  border: 3px solid var(--white-color);
+  width: 45px;
+  height: 45px;
+  margin: 2%;
+}
+
+.login-success-btns{
+  display: inline-flex;
+  margin: 5%;
+}
+
+.login-success-btns > a > .user-settings, 
+.login-success-btns > .user-log-out {
+  margin: 0 5%;
+}
+
+.login-success-btns > .user-log-out > button {
+  border-color: var(--red-btn-color);
+}
+
+.login-success-btns > .user-log-out > button > i {
+  color: var(--red-btn-color);
+}
+
+.login-success-btns > a > .user-settings > button {
+  border-color: var(--gray90-color);
+}
+
+.login-success-btns > a > .user-settings > button > i {
+  color: var(--gray90-color);
+}
+
+.user-settings-btn:hover .hint-container {
+  display: block;
+}
+
+/* ------------------- CAROUSEL ------------------- */
+
+
+.carousel-item{
+  max-height: 500px;
+}
+
+/* ------------------- FAQ ------------------- */
+
+.faq > ul > li {
+    margin: 5% auto;
+}
+
+.faq-tit {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 2%;
+    color: var(--green-color);
+}
+
+/* ------------------- CONTACTO ------------------- */
+
+.contact-form > .form-floating {
+  margin-top: 10px;
+}
+
+.contact-form {
+  max-width: 800px;
+  margin: 5% auto;
+}
+/* ------------------- FOOTER ------------------- */
+
+.footer {
+    height: 25vh;
+    position: relative;
+    position: -webkit-sticky; /* Safari */
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+  }
+  
+.footer-content{
+    background-color: var(--black-color);
+}
+
+.footer-title{
+    text-shadow: none;
+    font-size: 2rem;
+    color: var(--white-color);
+}
+
+.footer-ul {
+display: inline-flex;
+padding-left: 0;
+}
+
+.footer-ul > li {
+display: inline-block;
+}
+  
+.footer-icon {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 2rem;
+}
+
+.footer-icon:hover{
+    color: var(--green-color);
+}
+
+/* FOOTER WAVES */
+
+.waves-background{
+  background-color: var(--green-color);
+}
+
+.flex-waves-content { /*Flexbox for containers*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+  
+.content-waves {
+    display: block;
+    position:relative;
+    height:30vh;
+    text-align:center;
+}
+  
+.waves {
+    position:relative;
+    width: 100%;
+    height:15vh;
+    margin-bottom:-7px; /*Fix for safari gap*/
+    min-height:100px;
+    max-height:150px;
+}
+  
+/* Animation */
+  
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+  .parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px,0,0);
+    }
+    100% { 
+      transform: translate3d(85px,0,0);
+    }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+    .waves {
+      height:40px;
+      min-height:40px;
+    }
+    .content {
+      height:30vh;
+    }
+}

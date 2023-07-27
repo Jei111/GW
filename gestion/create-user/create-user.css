@@ -1,0 +1,19 @@
+.all-form{
+    margin: 2% auto;
+}
+
+.all-form input {
+    margin: 2% auto;
+}
+
+.input-group .left-input{
+    margin-right: 10px;
+}
+
+.input-group .right-input {
+    margin-right: 10px;
+}
+
+.waves-background {
+    background-color: transparent;
+}

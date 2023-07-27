@@ -1,0 +1,21 @@
+@import url(../css/colores.css);
+
+.login-form{
+    display: none;
+}
+
+.lista-productos-carrito, 
+.datos-compra-envio, 
+.medio-de-pago {
+    margin: 2% 10%;
+    padding: 2% 2% 5% 2%;
+    box-shadow: 5px 5px 16px var(--black-transp80-color);
+}
+
+#datos-compra-envio{
+    display: none;
+}
+
+#medio-de-pago{
+    display: none;
+}

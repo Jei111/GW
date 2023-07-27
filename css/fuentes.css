@@ -1,0 +1,125 @@
+/* ====================== FUENTES ====================== */
+
+/* 800 HACHES / 100 PES / 400 BOLD */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;800&display=swap');
+/* font-family: 'Raleway', sans-serif; */
+
+/* ====================== COLORES ====================== */
+
+@import url(colores.css);
+
+/* ---------------------- HACHES ---------------------- */
+  
+h1, h2, h3, h4 {
+    color: var(--green-color);
+    text-shadow: 2px 2px var(--white-color);
+    font-size: 3rem;
+    font-weight: 800;
+    font-family: 'Raleway', sans-serif;
+  }
+
+h5, h6 {  /* es igual pero más chiquito */
+  color: var(--green-color);
+  text-shadow: 2px 2px var(--white-color);
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* ---------------------- PES ---------------------- */
+
+p, li, td, blockquote {
+  color: var(--gray90-color);
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.special {
+  font-size: 1.2rem;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  text-shadow: 1px 1px var(--gray10-color);
+}
+
+th, button {
+  color: #1f1f1f;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  text-shadow: 2px 2px 2px var(--gray70-transp30-color);
+}
+
+.small { /* poner con color de fuente x ej clases almost-black-font o white-font */
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400; 
+  font-size: 0.7rem;
+  line-height: 1.8em;
+}
+
+.almost-black-font{
+  color: var(--gray90-color); 
+
+}
+
+.white-font {
+  color: var(--white-color);
+}
+
+.longText{
+  font-family: 'Raleway', sans-serif;
+  max-width: 600px;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+blockquote {
+  font-style: italic;
+}
+
+/* ---------------------- LIS ---------------------- */
+
+li{
+  list-style: none;
+}
+
+/* ---------------------- AS ---------------------- */
+
+nav a, 
+nav a:hover {
+  text-decoration: none;
+}
+
+a{
+  font-size: 1.2rem;
+}
+
+.small-a{
+  font-size: 0.7rem;
+}
+
+a, 
+.small-a{
+  color: var(--blue-link-color);
+  line-height: 1.8rem;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+a:visited, 
+.small-a:visited {
+  text-decoration: underline;
+  color: var(--green-color);
+}
+
+a:hover, 
+.small-a:hover {
+  text-decoration: underline;
+  color:var(--green-light-color);
+  text-shadow: none;
+}
